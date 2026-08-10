@@ -4,8 +4,6 @@ Reconocedor de dígitos escritos a mano desarrollado en **C++**, con una interfa
 
 El ejecutable permite dibujar directamente sobre una cuadrícula, ejecutar varias IAs y comparar sus predicciones desde una única interfaz.
 
-![Interfaz del reconocedor de dígitos](assets/interface.png)
-
 ---
 
 ## ✨ Características
@@ -340,7 +338,6 @@ Esta arquitectura presentó el mejor desempeño de las redes incluidas en el pro
 
 ---
 
-```markdown
 
 ### 0
 ![Cómo dibujar el 0](exampleOfDigits/0.jpg)
@@ -372,7 +369,8 @@ Esta arquitectura presentó el mejor desempeño de las redes incluidas en el pro
 ### 9
 ![Cómo dibujar el 9](exampleOfDigits/9.jpg)
 
-```
+
+---
 
 ## 🧩 Tecnologías y librerías
 
