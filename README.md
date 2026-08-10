@@ -1,5 +1,7 @@
 # IA Digit Recognizer
 
+![IA Digit Recognizer](interfaz.png)
+
 Reconocedor de dígitos escritos a mano desarrollado en **C++**, con una interfaz gráfica para dibujar números del **0 al 9** y obtener predicciones de distintas redes neuronales entrenadas sobre MNIST.
 
 El ejecutable permite dibujar directamente sobre una cuadrícula, ejecutar varias IAs y comparar sus predicciones desde una única interfaz.
