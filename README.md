@@ -338,6 +338,10 @@ Esta arquitectura presentó el mejor desempeño de las redes incluidas en el pro
 
 ---
 
+## 🧭 Guía Rápida (Cómo se encuentran los números que aprendió) 
+Puedes variar su tamaño, posición, rotación o forma. Pero deben tener la misma estructura o parecida.
+Mientras más rápido mueves tu mouse más oscuro será el pixel que dibujarás, para una mejor predicción un pixel más blanco (más cercano a 1) para la IA es recomendable.
+Mover el mouse rápido te permite agregar ruido a la imagen y ver cómo cambia la predicción o si se mantiene a pesar del alrededor.
 
 ### 0
 ![Cómo dibujar el 0](exampleOfDigits/0.jpg)
