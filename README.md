@@ -340,95 +340,39 @@ Esta arquitectura presentó el mejor desempeño de las redes incluidas en el pro
 
 ---
 
-## 🖼️ Dibujar los números
-
-El reconocimiento funciona mejor cuando el número se dibuja de forma similar a los datos utilizados durante el entrenamiento.
-
-Por ejemplo, se pueden incluir imágenes de referencia en el README para mostrar cómo conviene dibujar cada dígito:
-
-```text
-assets/
-├── interface.png
-├── digits/
-│   ├── 0.png
-│   ├── 1.png
-│   ├── 2.png
-│   ├── 3.png
-│   ├── 4.png
-│   ├── 5.png
-│   ├── 6.png
-│   ├── 7.png
-│   ├── 8.png
-│   └── 9.png
-```
-
-Por ejemplo:
-
 ```markdown
-![Ejemplos de dígitos](assets/digits/example.png)
-```
 
-GitHub **sí permite mostrar imágenes directamente dentro de un `README.md`** utilizando rutas relativas al repositorio.
-
-También es posible crear una sección individual para cada número:
-
-```markdown
 ### 0
-![Cómo dibujar el 0](assets/digits/0.png)
+![Cómo dibujar el 0](exampleOfDigits/0.jpg)
 
 ### 1
-![Cómo dibujar el 1](assets/digits/1.png)
+![Cómo dibujar el 1](exampleOfDigits/1.jpg)
+
+### 2
+![Cómo dibujar el 2](exampleOfDigits/2.jpg)
+
+### 3
+![Cómo dibujar el 3](exampleOfDigits/3.jpg)
+
+### 4
+![Cómo dibujar el 4](exampleOfDigits/4.jpg)
+
+### 5
+![Cómo dibujar el 5](exampleOfDigits/5.jpg)
+
+### 6
+![Cómo dibujar el 6](exampleOfDigits/6.jpg)
+
+### 7
+![Cómo dibujar el 7](exampleOfDigits/7.jpg)
+
+### 8
+![Cómo dibujar el 8](exampleOfDigits/8.jpg)
+
+### 9
+![Cómo dibujar el 9](exampleOfDigits/9.jpg)
+
 ```
-
-Esto es especialmente útil para explicar qué tipo de escritura reconoce mejor el modelo.
-
----
-
-## 📁 Estructura del proyecto
-
-Una estructura recomendada para la versión publicada sería:
-
-```text
-IA-Digit-Recognizer/
-│
-├── README.md
-│
-├── IAs/
-│   └── IA_MNIST/
-│
-├── simpleimages/
-│   ├── RedesConvolucionales_pizarra.png
-│   ├── RedesConvolucionales.png
-│   ├── ConversionImagenes_pizarra.png
-│   └── ConversionImagenes.png
-│
-├── assets/
-│   ├── interface.png
-│   └── digits/
-│       ├── 0.png
-│       ├── 1.png
-│       ├── 2.png
-│       ├── 3.png
-│       ├── 4.png
-│       ├── 5.png
-│       ├── 6.png
-│       ├── 7.png
-│       ├── 8.png
-│       └── 9.png
-│
-└── Release/
-    ├── IA_Digit_Recognizer.exe
-    └── models/
-        ├── [modelo_dense].json
-        ├── [modelo_cnn_3x3].json
-        ├── [modelo_cnn_2x2].json
-        ├── [modelo_augmentation].json
-        └── [modelo_cnn_advanced].json
-```
-
-La carpeta `models/` debe encontrarse junto al ejecutable para que la aplicación pueda cargar las distintas redes.
-
----
 
 ## 🧩 Tecnologías y librerías
 
@@ -439,40 +383,9 @@ El proyecto utiliza principalmente:
 - **GLFW** — ventana y gestión de entrada.
 - **nlohmann/json (`json.hpp`)** — almacenamiento y carga de los modelos.
 - **stb_image (`stb_image.h`)** — carga de imágenes.
-- **MaggIA** — librería de redes neuronales desarrollada desde cero.
+- **MaggIA** — librería de redes neuronales desarrollada desde cero por Maggio (yo).
 
 La implementación de las redes neuronales, convoluciones, pooling, entrenamiento y procesamiento necesario para los modelos pertenece a la librería desarrollada desde cero.
-
----
-
-## 🖼️ Imágenes y conversiones
-
-Además del reconocimiento de MNIST, el proyecto incluye procesamiento de imágenes.
-
-Se pueden trabajar imágenes y conjuntos completos de imágenes utilizando una cantidad específica de canales, de forma similar al procesamiento utilizado con MNIST.
-
-Se incluyen conversiones de imagen mediante:
-
-- Nearest Neighbor.
-- Bilinear.
-- Bicubic.
-- Promedio.
-
-También se incluyen explicaciones visuales de estos sistemas en:
-
-```text
-simpleimages/
-├── ConversionImagenes_pizarra
-└── ConversionImagenes
-```
-
-Las redes convolucionales y el funcionamiento del pooling se resumen visualmente en:
-
-```text
-simpleimages/
-├── RedesConvolucionales_pizarra
-└── RedesConvolucionales
-```
 
 ---
 
@@ -487,7 +400,7 @@ El usuario puede:
 3. Ver qué predice cada modelo.
 4. Comparar las respuestas entre arquitecturas.
 5. Probar modelos entrenados con diferentes configuraciones.
-6. Probar imágenes externas y conjuntos de imágenes.
+6. Probar dibujos propios y distintas formas para ver la interpretación de las IAs.
 
 La aplicación funciona como una demostración visual de las redes neuronales implementadas en **MaggIA**.
 
@@ -497,7 +410,7 @@ La aplicación funciona como una demostración visual de las redes neuronales im
 
 Los modelos `.json` incluidos en `models/` representan diferentes versiones de las redes entrenadas.
 
-Están organizados desde la arquitectura menos potente hasta la más potente para facilitar su comparación.
+En el exe están organizados desde la arquitectura menos potente hasta la más potente para facilitar su comparación.
 
 Algunos modelos tienen:
 
@@ -507,25 +420,15 @@ Algunos modelos tienen:
 - Data Augmentation.
 - Mayor profundidad y cantidad de filtros.
 
-La aplicación detecta/carga estos modelos y muestra sus predicciones en la interfaz.
-
----
-
-## 📅 Cronología del proyecto
-
-- **05/07/2026** — Inicio del proyecto MNIST, convoluciones, pooling e imágenes.
-- **13/07/2026** — Finalización de la primera etapa del proyecto MNIST.
-- **04/08/2026** — Inicio de las pruebas con Data Augmentation y arquitecturas más avanzadas.
-- **07/08/2026** — Finalización del proyecto principal y de las pruebas de Data Augmentation.
-- **10/08/2026** — Fecha indicada como finalización total del proyecto, incluyendo organización y simplificación final de los contenidos.
+La aplicación carga estos modelos y muestra sus predicciones en la interfaz.
 
 ---
 
 ## 🧠 MaggIA
 
-Este proyecto forma parte del desarrollo de **MaggIA**, una librería de redes neuronales implementada desde cero en C++.
+Este proyecto forma parte del desarrollo de **MaggIA**, una librería de redes neuronales implementada desde cero en C++ que pronto publicaré.
 
-El reconocedor de dígitos funciona como una aplicación de demostración para las diferentes capacidades de la librería, especialmente:
+El reconocedor de dígitos funciona como una aplicación de demostración para las diferentes capacidades de la librería mientras aprendo en el proceso, especialmente:
 
 ```text
 Dense Networks
@@ -543,14 +446,6 @@ Multiple trained models
 Interactive inference
 ```
 
----
-
-## 📜 Licencia
-
-Añade aquí la licencia que quieras utilizar para el proyecto, por ejemplo MIT:
-
 ```text
 MIT License
 ```
-
-Si el proyecto depende de otras librerías, conserva también sus respectivas licencias y avisos.
